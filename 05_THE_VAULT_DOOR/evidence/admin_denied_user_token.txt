@@ -1,0 +1,19 @@
+HTTP status with original user token: 403
+4-<meta charset="utf-8">
+5-<meta name="viewport" content="width=device-width,initial-scale=1">
+6:<title>Access Denied — NexaVault</title>
+7-<style>
+8-*{box-sizing:border-box;margin:0;padding:0}
+--
+132-      </svg>
+133-    </div>
+134:    NexaVault
+135-    <span style="font-size:.68rem;color:var(--text3);font-weight:400;margin-left:2px">v2.1</span>
+136-  </div>
+--
+152-    </svg>
+153-  </div>
+154:  <h2 style="color:var(--white);font-size:1.2rem;margin-bottom:.5rem">Access Denied</h2>
+155:  <p style="font-size:.88rem;color:var(--text3);max-width:320px;margin:0 auto 1.5rem">Administrator clearance is required to access the Vault.</p>
+156-  <a href="/famctf/dashboard" class="btn" style="display:inline-block;width:auto;padding:.6rem 1.5rem">
+157-    Back to dashboard
