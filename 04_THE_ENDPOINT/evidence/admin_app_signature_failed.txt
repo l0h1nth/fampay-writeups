@@ -1,0 +1,14 @@
+body={"username":"admin"}
+x-signature=2c64c639cabe5382ccd9fe4681277a84a05b00ea3d4d1443f685681298952188
+HTTP/2 401 
+date: Tue, 07 Jul 2026 16:37:38 GMT
+content-type: application/json
+content-length: 44
+server: cloudflare
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+cf-cache-status: DYNAMIC
+cf-ray: a17846626d6b7ab9-MAA
+
+{"error": "X-Signature verification failed"}

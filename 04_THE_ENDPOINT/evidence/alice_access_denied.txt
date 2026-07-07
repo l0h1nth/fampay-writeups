@@ -1,0 +1,14 @@
+body={"username":"alice"}
+x-signature=87c0a7b8db6cb59edbf3722ad659f9725f7a968647104d1731b24a0effe19d8f
+HTTP/2 403 
+date: Tue, 07 Jul 2026 16:37:38 GMT
+content-type: application/json
+content-length: 26
+server: cloudflare
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+cf-cache-status: DYNAMIC
+cf-ray: a17846616b57e727-MAA
+
+{"error": "access denied"}

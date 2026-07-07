@@ -1,0 +1,73 @@
+   209	    new-instance v1, Ljava/net/URL;
+   210	
+   211	    iget-object v2, p0, Lcom/ctf/fam/MainActivity$submitChallenge$1;->$path:Ljava/lang/String;
+   212	
+   213	    new-instance v3, Ljava/lang/StringBuilder;
+   214	
+   215	    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+   216	
+   217	    const-string v4, "http://172.16.13.107:9000"
+   218	
+   219	    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   220	
+   221	    move-result-object v3
+   222	
+   223	    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   224	
+   225	    move-result-object v2
+   226	
+   227	    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+   228	
+   229	    move-result-object v2
+   230	
+   231	    invoke-direct {v1, v2}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+   232	
+   233	    invoke-virtual {v1}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
+   234	
+   235	    move-result-object v1
+   236	
+   237	    const-string v2, "null cannot be cast to non-null type java.net.HttpURLConnection"
+   238	
+   239	    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+   240	
+   241	    check-cast v1, Ljava/net/HttpURLConnection;
+   242	
+   243	    .line 89
+   244	    .local v1, "conn":Ljava/net/HttpURLConnection;
+   245	    const-string v2, "POST"
+   246	
+   247	    invoke-virtual {v1, v2}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
+   248	
+   249	    .line 90
+   250	    const-string v2, "Content-Type"
+   251	
+   252	    const-string v3, "application/json"
+   253	
+   254	    invoke-virtual {v1, v2, v3}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+   255	
+   256	    .line 91
+   257	    const-string v2, "X-Signature"
+   258	
+   259	    iget-object v3, p0, Lcom/ctf/fam/MainActivity$submitChallenge$1;->$sig:Ljava/lang/String;
+   260	
+   261	    invoke-virtual {v1, v2, v3}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+   341	    .line 97
+   342	    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getResponseCode()I
+   343	
+   344	    move-result v2
+   345	
+   346	    .line 98
+   347	    .local v2, "code":I
+   348	    const/16 v4, 0xc8
+   349	
+   350	    if-ne v2, v4, :cond_2
+   351	
+   352	    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
+   353	
+   354	    move-result-object v4
+   355	
+   356	    const-string v5, "getInputStream(...)"
+   357	
+   358	    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+   359	
+   360	    sget-object v5, Lkotlin/text/Charsets;->UTF_8:Ljava/nio/charset/Charset;

@@ -1,0 +1,14 @@
+body={"username":"admin"}
+x-signature=2c64c639cabe5382ccd9fe4681277a847ef6be05f7b3aefdf685681298952188
+HTTP/2 200 
+date: Tue, 07 Jul 2026 16:37:38 GMT
+content-type: application/json
+content-length: 74
+server: cloudflare
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+cf-cache-status: DYNAMIC
+cf-ray: a17846638c9812a3-MAA
+
+{"flag": "FAM{x_s1gn4tur3_r3v3rs3d_n1c3ly}", "message": "Welcome, admin."}

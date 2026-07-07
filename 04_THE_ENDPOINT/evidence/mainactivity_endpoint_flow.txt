@@ -1,0 +1,36 @@
+    49	    public final native String computeSignature(String method, String path, String body);
+    50	
+    51	    public final native String getDebugToken();
+    52	
+    53	    public final native String getSecretFromNative();
+    54	
+    55	    public final native String[] getUsernames();
+    56	
+    57	    public MainActivity() {
+    58	        System.loadLibrary("fam");
+   104	    private final void submitChallenge() {
+   105	        Spinner spinner = this.spinnerUsername;
+   106	        TextView textView = null;
+   107	        if (spinner == null) {
+   108	            Intrinsics.throwUninitializedPropertyAccessException("spinnerUsername");
+   109	            spinner = null;
+   110	        }
+   111	        String username = spinner.getSelectedItem().toString();
+   112	        String body = "{\"username\":\"" + username + "\"}";
+   113	        String sig = computeSignature("POST", "/api/check", body);
+   114	        Log.d(TAG, "ch4 sending: body=" + body + " sig=" + sig);
+   115	        TextView textView2 = this.tvResponse;
+   116	        if (textView2 == null) {
+   117	            Intrinsics.throwUninitializedPropertyAccessException("tvResponse");
+   118	            textView2 = null;
+   119	        }
+   120	        textView2.setText("sending...");
+   121	        TextView textView3 = this.tvResponse;
+   122	        if (textView3 == null) {
+   123	            Intrinsics.throwUninitializedPropertyAccessException("tvResponse");
+   124	        } else {
+   125	            textView = textView3;
+   126	        }
+   127	        textView.setVisibility(0);
+   128	        ThreadsKt.thread((21 & 1) != 0, (21 & 2) != 0 ? false : false, (21 & 4) != 0 ? null : null, (21 & 8) != 0 ? null : null, (21 & 16) != 0 ? -1 : 0, new C00581("/api/check", sig, this, body));
+   129	    }

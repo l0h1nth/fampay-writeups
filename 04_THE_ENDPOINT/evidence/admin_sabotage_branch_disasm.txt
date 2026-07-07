@@ -1,0 +1,17 @@
+
+04_THE_ENDPOINT/apktool/lib/x86_64/libfam.so:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000006b80 <_ZN7_JNIEnv21ReleaseStringUTFCharsEP8_jstringPKc@@Base+0x2d0>:
+    6b80:	48 b8 32 c7 a7 15 ca 	movabs rax,0xdcc67eca15a7c732
+    6b87:	7e c6 dc 
+    6b8a:	48 39 85 68 ff ff ff 	cmp    QWORD PTR [rbp-0x98],rax
+    6b91:	0f 85 12 00 00 00    	jne    6ba9 <_ZN7_JNIEnv21ReleaseStringUTFCharsEP8_jstringPKc@@Base+0x2f9>
+    6b97:	48 b8 be ba fe ca ef 	movabs rax,0xdeadbeefcafebabe
+    6b9e:	be ad de 
+    6ba1:	48 33 45 e0          	xor    rax,QWORD PTR [rbp-0x20]
+    6ba5:	48 89 45 e0          	mov    QWORD PTR [rbp-0x20],rax
+    6ba9:	4c 8b 45 d0          	mov    r8,QWORD PTR [rbp-0x30]
+    6bad:	4c                   	rex.WR
