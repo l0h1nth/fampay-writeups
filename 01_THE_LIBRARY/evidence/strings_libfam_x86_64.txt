@@ -1,0 +1,2 @@
+    d0f Java_com_ctf_fam_MainActivity_getSecretFromNative
+   2f73 FAM{str1ngs_d0nt_l13_1n_n4t1v3_l4nd}

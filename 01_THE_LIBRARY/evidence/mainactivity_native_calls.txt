@@ -1,0 +1,22 @@
+    41	public final class MainActivity extends AppCompatActivity {
+    42	    public static final String API_KEY = "AIzaSyAes0IV3Hq3pN0oYmZJ1kfKl9vcvQEF2ww";
+    43	    public static final String SERVER_URL = "http://172.16.13.107:9000";
+    44	    private static final String TAG = "FAM_CTF";
+    45	    private FirebaseAuth auth;
+    46	    private Spinner spinnerUsername;
+    47	    private TextView tvResponse;
+    48	
+    49	    public final native String computeSignature(String method, String path, String body);
+    50	
+    51	    public final native String getDebugToken();
+    52	
+    53	    public final native String getSecretFromNative();
+    54	
+    55	    public final native String[] getUsernames();
+    56	
+    57	    public MainActivity() {
+    58	        System.loadLibrary("fam");
+    59	    }
+   194	    private final void verifyFlag1() {
+   195	        Log.d(TAG, "ch1 ok: " + getSecretFromNative().length() + " chars");
+   196	    }

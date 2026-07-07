@@ -1,0 +1,5 @@
+    cd7 Java_com_ctf_fam_MainActivity_getSecretFromNative
+    ecf Java_com_ctf_fam_MainActivity_computeSignature
+    fa9 Java_com_ctf_fam_MainActivity_getDebugToken
+   1071 Java_com_ctf_fam_MainActivity_getUsernames
+   2f99 FAM{str1ngs_d0nt_l13_1n_n4t1v3_l4nd}
