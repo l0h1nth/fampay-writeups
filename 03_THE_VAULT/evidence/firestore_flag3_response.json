@@ -1,0 +1,10 @@
+{
+  "name": "projects/fam-ctf/databases/(default)/documents/flags/flag3",
+  "fields": {
+    "value": {
+      "stringValue": "FAM{4pp_ch3ck_byp4ss_g00d_j0b}"
+    }
+  },
+  "createTime": "2026-06-30T11:44:40.779095Z",
+  "updateTime": "2026-06-30T11:44:40.779095Z"
+}

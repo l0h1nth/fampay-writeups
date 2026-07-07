@@ -1,0 +1,52 @@
+    49	    public final native String computeSignature(String method, String path, String body);
+    50	
+    51	    public final native String getDebugToken();
+    52	
+    53	    public final native String getSecretFromNative();
+    54	
+    55	    public final native String[] getUsernames();
+    56	
+    57	    public MainActivity() {
+    58	        System.loadLibrary("fam");
+   100	    private final void initAppCheck() {
+   101	        FirebaseAppCheck.getInstance().installAppCheckProviderFactory(new DebugTokenAppCheckProviderFactory("674578159678", "1:674578159678:android:775058d15777caf841996f", getDebugToken(), API_KEY));
+   102	    }
+   267	    private final void verifyFlag3() {
+   268	        Task<DocumentSnapshot> task = FirebaseFirestore.getInstance().collection("flags").document("flag3").get();
+   269	        final C00601 c00601 = new Function1<DocumentSnapshot, Unit>() { // from class: com.ctf.fam.MainActivity.verifyFlag3.1
+   270	            @Override // kotlin.jvm.functions.Function1
+   271	            public /* bridge */ /* synthetic */ Unit invoke(DocumentSnapshot documentSnapshot) {
+   272	                invoke2(documentSnapshot);
+   273	                return Unit.INSTANCE;
+   274	            }
+   275	
+   276	            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+   277	            public final void invoke2(DocumentSnapshot it) {
+   278	                String string = it.getString("value");
+   279	                Log.d(MainActivity.TAG, "ch3 ok: " + (string != null ? Integer.valueOf(string.length()) : null) + " chars");
+   280	            }
+   281	        };
+   282	        task.addOnSuccessListener(new OnSuccessListener() { // from class: com.ctf.fam.MainActivity$$ExternalSyntheticLambda0
+   283	            @Override // com.google.android.gms.tasks.OnSuccessListener
+   284	            public final void onSuccess(Object obj) {
+   285	                MainActivity.verifyFlag3$lambda$3(c00601, obj);
+   286	            }
+   287	        }).addOnFailureListener(new OnFailureListener() { // from class: com.ctf.fam.MainActivity$$ExternalSyntheticLambda1
+   288	            @Override // com.google.android.gms.tasks.OnFailureListener
+   289	            public final void onFailure(Exception exc) {
+   290	                MainActivity.verifyFlag3$lambda$4(exc);
+   291	            }
+   292	        });
+   293	    }
+   294	
+   295	    /* JADX INFO: Access modifiers changed from: private */
+   296	    public static final void verifyFlag3$lambda$3(Function1 tmp0, Object p0) {
+   297	        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+   298	        tmp0.invoke(p0);
+   299	    }
+   300	
+   301	    /* JADX INFO: Access modifiers changed from: private */
+   302	    public static final void verifyFlag3$lambda$4(Exception it) {
+   303	        Intrinsics.checkNotNullParameter(it, "it");
+   304	        Log.e(TAG, "ch3 fail: " + it.getMessage());
+   305	    }

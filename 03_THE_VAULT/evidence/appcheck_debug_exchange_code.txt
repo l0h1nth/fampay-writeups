@@ -1,0 +1,31 @@
+    68	    /* JADX INFO: Access modifiers changed from: private */
+    69	    public static final AppCheckToken getToken$lambda$1(DebugTokenAppCheckProvider this$0) throws JSONException, IOException {
+    70	        Intrinsics.checkNotNullParameter(this$0, "this$0");
+    71	        URL url = new URL("https://firebaseappcheck.googleapis.com/v1/projects/" + this$0.projectNumber + "/apps/" + this$0.appId + ":exchangeDebugToken");
+    72	        URLConnection uRLConnectionOpenConnection = url.openConnection();
+    73	        Intrinsics.checkNotNull(uRLConnectionOpenConnection, "null cannot be cast to non-null type java.net.HttpURLConnection");
+    74	        HttpURLConnection conn = (HttpURLConnection) uRLConnectionOpenConnection;
+    75	        conn.setRequestMethod("POST");
+    76	        conn.setRequestProperty(HttpHeaders.CONTENT_TYPE, "application/json");
+    77	        conn.setRequestProperty("X-Goog-Api-Key", this$0.apiKey);
+    78	        conn.setDoOutput(true);
+    79	        OutputStream outputStream = conn.getOutputStream();
+    80	        Intrinsics.checkNotNullExpressionValue(outputStream, "getOutputStream(...)");
+    81	        Writer outputStreamWriter = new OutputStreamWriter(outputStream, Charsets.UTF_8);
+    82	        BufferedWriter bufferedWriter = outputStreamWriter instanceof BufferedWriter ? (BufferedWriter) outputStreamWriter : new BufferedWriter(outputStreamWriter, 8192);
+    83	        try {
+    84	            BufferedWriter it = bufferedWriter;
+    85	            it.write(new JSONObject().put("debug_token", this$0.debugToken).toString());
+    86	            Unit unit = Unit.INSTANCE;
+    87	            CloseableKt.closeFinally(bufferedWriter, null);
+    88	            InputStream inputStream = conn.getInputStream();
+    89	            Intrinsics.checkNotNullExpressionValue(inputStream, "getInputStream(...)");
+    90	            Reader inputStreamReader = new InputStreamReader(inputStream, Charsets.UTF_8);
+    91	            String response = TextStreamsKt.readText(inputStreamReader instanceof BufferedReader ? (BufferedReader) inputStreamReader : new BufferedReader(inputStreamReader, 8192));
+    92	            JSONObject json = new JSONObject(response);
+    93	            final String rawToken = json.getString("token");
+    94	            String string = json.getString("ttl");
+    95	            Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+    96	            long ttlSeconds = Long.parseLong(StringsKt.trimEnd(string, 's'));
+    97	            final long expireMillis = System.currentTimeMillis() + (((long) 1000) * ttlSeconds);
+    98	            return new AppCheckToken() { // from class: com.ctf.fam.DebugTokenAppCheckProvider$getToken$1$2
