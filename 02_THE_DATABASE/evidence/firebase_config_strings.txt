@@ -1,0 +1,7 @@
+    79	    <string name="firebase_database_url">https://fam-ctf-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+    80	    <string name="gcm_defaultSenderId">674578159678</string>
+    81	    <string name="google_api_key">AIzaSyAes0IV3Hq3pN0oYmZJ1kfKl9vcvQEF2ww</string>
+    82	    <string name="google_app_id">1:674578159678:android:775058d15777caf841996f</string>
+    83	    <string name="google_crash_reporting_api_key">AIzaSyAes0IV3Hq3pN0oYmZJ1kfKl9vcvQEF2ww</string>
+    84	    <string name="google_storage_bucket">fam-ctf.firebasestorage.app</string>
+   193	    <string name="project_id">fam-ctf</string>

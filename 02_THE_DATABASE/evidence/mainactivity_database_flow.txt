@@ -1,0 +1,68 @@
+   198	    private final void signInAnonymouslyAndVerifyFlag2() {
+   199	        FirebaseAuth firebaseAuth = this.auth;
+   200	        if (firebaseAuth == null) {
+   201	            Intrinsics.throwUninitializedPropertyAccessException("auth");
+   202	            firebaseAuth = null;
+   203	        }
+   204	        Task<AuthResult> taskSignInAnonymously = firebaseAuth.signInAnonymously();
+   205	        final Function1<AuthResult, Unit> function1 = new Function1<AuthResult, Unit>() { // from class: com.ctf.fam.MainActivity.signInAnonymouslyAndVerifyFlag2.1
+   206	            {
+   207	                super(1);
+   208	            }
+   209	
+   210	            @Override // kotlin.jvm.functions.Function1
+   211	            public /* bridge */ /* synthetic */ Unit invoke(AuthResult authResult) {
+   212	                invoke2(authResult);
+   213	                return Unit.INSTANCE;
+   214	            }
+   215	
+   216	            /* JADX INFO: renamed from: invoke, reason: avoid collision after fix types in other method */
+   217	            public final void invoke2(AuthResult it) {
+   218	                String uid;
+   219	                FirebaseUser user = it.getUser();
+   220	                Log.d(MainActivity.TAG, "ch2 auth ok uid=" + ((user == null || (uid = user.getUid()) == null) ? null : StringsKt.take(uid, 8)));
+   221	                MainActivity.this.verifyFlag2();
+   222	            }
+   223	        };
+   224	        taskSignInAnonymously.addOnSuccessListener(new OnSuccessListener() { // from class: com.ctf.fam.MainActivity$$ExternalSyntheticLambda2
+   225	            @Override // com.google.android.gms.tasks.OnSuccessListener
+   226	            public final void onSuccess(Object obj) {
+   227	                MainActivity.signInAnonymouslyAndVerifyFlag2$lambda$1(function1, obj);
+   228	            }
+   229	        }).addOnFailureListener(new OnFailureListener() { // from class: com.ctf.fam.MainActivity$$ExternalSyntheticLambda3
+   230	            @Override // com.google.android.gms.tasks.OnFailureListener
+   231	            public final void onFailure(Exception exc) {
+   232	                MainActivity.signInAnonymouslyAndVerifyFlag2$lambda$2(exc);
+   233	            }
+   234	        });
+   235	    }
+   236	
+   237	    /* JADX INFO: Access modifiers changed from: private */
+   238	    public static final void signInAnonymouslyAndVerifyFlag2$lambda$1(Function1 tmp0, Object p0) {
+   239	        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+   240	        tmp0.invoke(p0);
+   241	    }
+   242	
+   243	    /* JADX INFO: Access modifiers changed from: private */
+   244	    public static final void signInAnonymouslyAndVerifyFlag2$lambda$2(Exception e) {
+   245	        Intrinsics.checkNotNullParameter(e, "e");
+   246	        Log.e(TAG, "ch2 auth fail: " + e.getMessage());
+   247	    }
+   248	
+   249	    /* JADX INFO: Access modifiers changed from: private */
+   250	    public final void verifyFlag2() {
+   251	        FirebaseDatabase.getInstance("https://fam-ctf-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("flag").addListenerForSingleValueEvent(new ValueEventListener() { // from class: com.ctf.fam.MainActivity.verifyFlag2.1
+   252	            @Override // com.google.firebase.database.ValueEventListener
+   253	            public void onDataChange(DataSnapshot snapshot) {
+   254	                Intrinsics.checkNotNullParameter(snapshot, "snapshot");
+   255	                String str = (String) snapshot.getValue(String.class);
+   256	                Log.d(MainActivity.TAG, "ch2 ok: " + (str != null ? Integer.valueOf(str.length()) : null) + " chars");
+   257	            }
+   258	
+   259	            @Override // com.google.firebase.database.ValueEventListener
+   260	            public void onCancelled(DatabaseError error) {
+   261	                Intrinsics.checkNotNullParameter(error, "error");
+   262	                Log.e(MainActivity.TAG, "ch2 fail: " + error.getMessage());
+   263	            }
+   264	        });
+   265	    }
