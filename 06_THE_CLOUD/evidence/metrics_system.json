@@ -1,0 +1,1 @@
+{"az":"ap-south-1a","hostname":"ip-10-20-1-146.ap-south-1.compute.internal","instance_type":"t3.small","platform":"Linux","region":"ap-south-1","services":{"api_gateway":"healthy","cache":"healthy","storage":"healthy","worker_pool":"healthy"},"uptime_s":60819}

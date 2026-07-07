@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.8 Python/3.9.25
+Date: Tue, 07 Jul 2026 16:53:59 GMT
+Content-Type: application/json
+Content-Length: 83
+Connection: close
+
+{"body":"","status":401,"url":"http://instance-data/latest/meta-data/instance-id"}

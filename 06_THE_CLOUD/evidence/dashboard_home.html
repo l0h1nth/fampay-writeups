@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NexOps Dashboard</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0b0f14;color:#8fa8b8;font-family:'Courier New',monospace;font-size:14px}
+nav{background:#0d1117;border-bottom:1px solid #1c2a38;padding:12px 24px;
+    display:flex;align-items:center;justify-content:space-between}
+.brand{color:#00c896;font-weight:700;font-size:16px;letter-spacing:2px}
+.version{color:#3d5566;font-size:11px}
+.container{max-width:960px;margin:0 auto;padding:40px 24px}
+h2{color:#c8d8e8;font-size:16px;margin-bottom:20px;border-bottom:1px solid #1c2a38;
+   padding-bottom:8px;letter-spacing:1px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:32px}
+.card{background:#0d1117;border:1px solid #1c2a38;border-radius:6px;padding:16px}
+.card-label{font-size:11px;color:#3d5566;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.card-value{color:#00c896;font-size:18px;font-weight:700}
+.card-sub{font-size:11px;color:#3d5566;margin-top:4px}
+.endpoints{background:#0d1117;border:1px solid #1c2a38;border-radius:6px;padding:20px}
+.ep{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid #1a2535}
+.ep:last-child{border:none}
+.method{font-size:10px;font-weight:700;padding:2px 8px;border-radius:3px;min-width:40px;text-align:center}
+.get{background:rgba(0,200,150,.15);color:#00c896}
+.post{background:rgba(59,130,246,.15);color:#3b82f6}
+.ep-path{color:#c8d8e8}
+.ep-desc{color:#3d5566;font-size:12px;margin-left:auto}
+.status-ok{color:#00c896}
+footer{text-align:center;padding:24px;color:#3d5566;font-size:11px}
+</style>
+</head>
+<body>
+<nav>
+  <span class="brand">◈ NEXOPS</span>
+  <span class="version">v1.4.2 · build b4f91a2 · production</span>
+</nav>
+<div class="container">
+  <h2>SYSTEM OVERVIEW</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="card-label">Status</div>
+      <div class="card-value status-ok">NOMINAL</div>
+      <div class="card-sub">All systems operational</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Region</div>
+      <div class="card-value">ap-south-1</div>
+      <div class="card-sub">Primary deployment zone</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Services</div>
+      <div class="card-value">12/12</div>
+      <div class="card-sub">Healthy</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Last Deploy</div>
+      <div class="card-value">14m ago</div>
+      <div class="card-sub">prod-deploy #847</div>
+    </div>
+  </div>
+  <h2>API ENDPOINTS</h2>
+  <div class="endpoints">
+    <div class="ep"><span class="method get">GET</span><span class="ep-path">/status</span><span class="ep-desc">Health check</span></div>
+    <div class="ep"><span class="method get">GET</span><span class="ep-path">/metrics/system</span><span class="ep-desc">System metrics</span></div>
+    <div class="ep"><span class="method get">GET</span><span class="ep-path">/metrics/config</span><span class="ep-desc">Runtime configuration</span></div>
+    <div class="ep"><span class="method get">GET</span><span class="ep-path">/metrics/endpoints</span><span class="ep-desc">Registered routes</span></div>
+    <div class="ep"><span class="method post">POST</span><span class="ep-path">/internal/webhook</span><span class="ep-desc">Webhook trigger [internal]</span></div>
+  </div>
+</div>
+<footer>NexOps Monitoring Platform · Internal Use Only · © 2026 NexCorp Engineering</footer>
+</body>
+</html>

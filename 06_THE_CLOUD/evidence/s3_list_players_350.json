@@ -1,0 +1,5 @@
+{
+  "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<ListBucketResult xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><Name>fam-ctf-cloud-challenge</Name><Prefix>players/350/</Prefix><KeyCount>1</KeyCount><MaxKeys>1000</MaxKeys><IsTruncated>false</IsTruncated><Contents><Key>players/350/flag.txt</Key><LastModified>2026-07-07T16:49:56.000Z</LastModified><ETag>&quot;fe5ec7a47846887947f37d1f18a6c3db&quot;</ETag><ChecksumAlgorithm>CRC32</ChecksumAlgorithm><ChecksumType>FULL_OBJECT</ChecksumType><Size>33</Size><StorageClass>STANDARD</StorageClass></Contents></ListBucketResult>",
+  "status": 200,
+  "url": "<redacted-presigned-s3-url>"
+}

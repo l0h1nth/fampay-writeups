@@ -1,0 +1,1 @@
+{"endpoints":[{"methods":["GET"],"path":"/"},{"methods":["GET","POST","PUT"],"path":"/internal/webhook"},{"methods":["GET"],"path":"/metrics/config"},{"methods":["GET"],"path":"/metrics/endpoints"},{"methods":["GET"],"path":"/metrics/system"},{"methods":["GET"],"path":"/static/<path:filename>"},{"methods":["GET"],"path":"/status"}]}

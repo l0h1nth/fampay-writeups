@@ -1,0 +1,8 @@
+HTTP/1.1 400 BAD REQUEST
+Server: Werkzeug/3.1.8 Python/3.9.25
+Date: Tue, 07 Jul 2026 16:53:39 GMT
+Content-Type: application/json
+Content-Length: 164
+Connection: close
+
+{"error":"Missing 'url' parameter","note":"Only internal AWS endpoints are permitted (169.254.x.x, *.amazonaws.com)","usage":"POST /internal/webhook?url=<target>"}

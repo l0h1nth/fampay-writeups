@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.8 Python/3.9.25
+Date: Tue, 07 Jul 2026 16:54:08 GMT
+Content-Type: application/json
+Content-Length: 71
+Connection: close
+
+{"body":"","status":405,"url":"http://instance-data/latest/api/token"}

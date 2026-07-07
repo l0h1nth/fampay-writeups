@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.8 Python/3.9.25
+Date: Tue, 07 Jul 2026 16:54:46 GMT
+Content-Type: application/json
+Content-Length: 394
+Connection: close
+
+{"body":"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>AccessDenied</Code><Message>Access Denied</Message><RequestId>Z2E9B61YTQP8RHS1</RequestId><HostId>PD6wkOjFNMHMBhQ8YtKCWsxvgj7j6r/FjUz9eZw5WNqOGHLB9mdtRBmpek/vO0PSW8dc6I1GnX3vO9CypUWiehO52giFJkVp</HostId></Error>","status":403,"url":"https://fam-ctf-cloud-challenge.s3.ap-south-1.amazonaws.com/?list-type=2&prefix=players/350/"}
